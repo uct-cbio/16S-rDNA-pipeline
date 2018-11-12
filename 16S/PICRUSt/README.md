@@ -4,8 +4,7 @@
 1. Run step one of uparse_closed_ref_from_de_novo_forPICRUSt.sh with the file 'otus_repsetOUT.fa' from the standard cbio pipeline as input
 2. Download OTU table created with standard cbio-pipeline, import into R using phyloseq and save as a phyloseq object (.RData file)
 3. You will need the .RData file from 2. for the R script WISH_de_novo_to_closed_ref_OTUs.R together with the .uc file created in 1. 
-#NOTE1: the .uc file from 1. you only need the columns with de novo OTU IDs and the columns with mapped GG IDs (for those that map), delete the rest (see example file)
-#NOTE2: change .uc extension to .txt before importing into R
+#NOTE: change .uc extension to .txt before importing into R 
 4. Upload filtered .txt file containing only OTUs that mapped to GreenGenes IDs to hex
 5. Continue with remaining steps in uparse_closed_ref_from_de_novo_forPICRUSt.sh (create new .biom file for use in PICRUSt)
 6. Run PICRUSt on output from 5.
