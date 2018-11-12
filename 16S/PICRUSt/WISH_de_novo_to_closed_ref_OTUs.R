@@ -58,7 +58,7 @@ rownames(o.tab)[85]
 # > cat("Synch1464614218233544000\n");
 temp <- which(rownames(o.tab)=="198893")#84 85
 o.tab[temp,]
-x = o.closed[o.closed[,2]=="128382",]
+x = o.closed[o.closed[,10]=="128382",]
 x
 # x
 #         De_novo_ID GG_13_8_ID
