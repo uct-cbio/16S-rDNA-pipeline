@@ -7,4 +7,4 @@
 #NOTE: change .uc extension to .txt before importing into R 
 4. Upload filtered .txt file containing only OTUs that mapped to GreenGenes IDs to hex
 5. Continue with remaining steps in uparse_closed_ref_from_de_novo_forPICRUSt.sh (create new .biom file for use in PICRUSt)
-6. Run PICRUSt on output from 5.
+6. Run PICRUSt.sh on output from 5.
