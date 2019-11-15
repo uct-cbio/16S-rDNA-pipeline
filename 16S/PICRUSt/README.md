@@ -1,10 +1,9 @@
-# Running PICRUSt on the UCT Hex cluster.
+# Running PICRUSt on the UCT HPC cluster.
 
-##This is based on using the OTU table produced by the standard cbio pipeline for de novo OTU picking
-1. Run step one of uparse_closed_ref_from_de_novo_forPICRUSt.sh with the file 'otus_repsetOUT.fa' from the standard cbio pipeline as input
-2. Download OTU table created with standard cbio-pipeline, import into R using phyloseq and save as a phyloseq object (.RData file)
-3. You will need the .RData file from 2. for the R script WISH_de_novo_to_closed_ref_OTUs.R together with the .uc file created in 1. 
-#NOTE: change .uc extension to .txt before importing into R 
-4. Upload filtered .txt file containing only OTUs that mapped to GreenGenes IDs to hex
-5. Continue with remaining steps in uparse_closed_ref_from_de_novo_forPICRUSt.sh (create new .biom file for use in PICRUSt)
-6. Run PICRUSt.sh on output from 5.
+##This is based on using the ASV table produced by the dada2 pipeline here https://github.com/kviljoen/16S-rDNA-dada2-pipeline
+1. Download ASV table created (e.g. 'ASV_counts.RDS'), import into R, standardize reads and merge at lowest available taxonomic level using the script 'ASV_de_novo_to_GG_mapping.R' (save phyloseq object as .RDS file for use in 3.)
+#NOTE: You cannot run this script as is - you will need to adapt to specify your own files and filepaths.
+#NOTE: You should run this script line-by-line not all in one go!
+2. Run closed_ref_from_de_novo_forPICRUSt.sh with the fasta file with representative ASV seqs from step 1.
+3. You will need the .RDS file from 1. for the R script WISH_de_novo_to_closed_ref_OTUs.R together with the .txt mapping file created in 2. to create a ASV table with GG IDs and it's corresponding .biom file for use wit PICRUSt
+4. Run PICRUSt.sh on output from 3.
