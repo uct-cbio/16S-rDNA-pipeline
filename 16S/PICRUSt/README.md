@@ -6,4 +6,4 @@
 #NOTE: You should run this script line-by-line not all in one go!
 2. Run closed_ref_from_de_novo_forPICRUSt.sh with the fasta file with representative ASV seqs from step 1.
 3. You will need the .RDS file from 1. for the R script WISH_de_novo_to_closed_ref_OTUs.R together with the .txt mapping file created in 2. to create a ASV table with GG IDs and it's corresponding .biom file for use wit PICRUSt
-4. Run PICRUSt.sh on output from 3.
+4. Run PICRUSt.sh on .biom generated in 3.
