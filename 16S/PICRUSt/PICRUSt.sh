@@ -26,13 +26,13 @@ categorize_by_function.py -i $outDir/predicted_metagenome.biom -l 2 -c KEGG_Path
 categorize_by_function.py -i $outDir/predicted_metagenome.biom -l 1 -c KEGG_Pathways -o $outDir/categorize_by_function_level_1.biom
 
 #convert .biom files to .txt files for use in R
-biom convert -i $outDir/predicted_metagenome.biom -o $outDir/predicted_metagenome.txt -b #b specifies biom --> txt
-biom convert -i $outDir/categorize_by_function_level_3.biom -o $outDir/categorize_by_function_level_3.txt -b
-biom convert -i $outDir/categorize_by_function_level_2.biom -o $outDir/categorize_by_function_level_2.txt -b
-biom convert -i $outDir/categorize_by_function_level_1.biom -o $outDir/categorize_by_function_level_1.txt -b
+biom convert -i $outDir/predicted_metagenome.biom -o $outDir/predicted_metagenome.txt --to-tsv #--to-tsv specifies biom --> txt
+biom convert -i $outDir/categorize_by_function_level_3.biom -o $outDir/categorize_by_function_level_3.txt --to-tsv
+biom convert -i $outDir/categorize_by_function_level_2.biom -o $outDir/categorize_by_function_level_2.txt --to-tsv
+biom convert -i $outDir/categorize_by_function_level_1.biom -o $outDir/categorize_by_function_level_1.txt --to-tsv
 
-#STAMP software can also use .txt files the headers just need minor modifications I think (see exisiting .txt files previously used for STAMP) 
+#STAMP software can also use .txt files the headers just need minor modifications (see exisiting .txt files previously used for STAMP) 
 
-#lets see which OTUs underly the predicted KEGG functions using metagenome_contributions.py
+#lets see which ASVs underly the predicted KEGG functions using metagenome_contributions.py
 metagenome_contributions.py -i $outDir/CN_norm.biom -o $outDir/metagenome_contributions.txt -t ko
 
