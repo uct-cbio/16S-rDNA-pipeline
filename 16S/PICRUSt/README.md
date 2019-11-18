@@ -4,14 +4,14 @@
 1. Download ASV table created (e.g. 'ASV_counts.RDS'), import into R, standardize reads and merge at lowest available taxonomic level using the script 'ASV_de_novo_to_GG_mapping.R' (save phyloseq object as .RDS file for use in 3.)
 #NOTE: You cannot run this script as is - you will need to adapt to specify your own files and filepaths.
 #NOTE: You should run this script line-by-line not all in one go!
-2. Run closed_ref_from_de_novo_forPICRUSt.sh with the fasta file with representative ASV seqs from step 1.
+2. Install usearch11 (instructions https://www.drive5.com/usearch/manual/install.html). Run closed_ref_from_de_novo_forPICRUSt.sh with the fasta file with representative ASV seqs from step 1.
 #NB: You cannot run this script as is - you will need to adapt to specify your own files and filepaths and set your HPC account group membership
-3. You will need the .RDS file from 1. for the R script WISH_de_novo_to_closed_ref_OTUs.R together with the .txt mapping file created in 2. to create a ASV table with GG IDs and it's corresponding .biom file for use wit PICRUSt
+3. You will need the .RDS file from 1. for the R script WISH_de_novo_to_closed_ref_OTUs.R together with the .txt mapping file created in 2. to create a ASV table with GG IDs and it's corresponding .biom file for use with PICRUSt.
 4. Run PICRUSt.sh on .biom generated in 3 as follows:
 4a. Log in to HPC
 4b. Start an interactive job with something like
 ```
-srun -N 1 --ntasks=8 --time=24:00:00 --pty bash
+srun -N 1 --time=24:00:00 --pty bash
 ```
 4c. Install picrust from bioconda: http://picrust.github.io/picrust/install.html#install
 ```
