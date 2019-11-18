@@ -1,6 +1,6 @@
 # Running PICRUSt on the UCT HPC cluster.
 
-##This is based on using the ASV table produced by the dada2 pipeline here https://github.com/kviljoen/16S-rDNA-dada2-pipeline
+## This is based on using the ASV table produced by the dada2 pipeline here https://github.com/kviljoen/16S-rDNA-dada2-pipeline
 1. Download ASV table created (e.g. 'ASV_counts.RDS'), import into R, standardize reads and merge at lowest available taxonomic level using the script 'ASV_de_novo_to_GG_mapping.R' (save phyloseq object as .RDS file for use in 3.)
 #NOTE: You cannot run this script as is - you will need to adapt to specify your own files and filepaths.
 #NOTE: You should run this script line-by-line not all in one go!
