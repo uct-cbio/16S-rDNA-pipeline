@@ -5,8 +5,9 @@
 #NOTE: You cannot run this script as is - you will need to adapt to specify your own files and filepaths.
 #NOTE: You should run this script line-by-line not all in one go!
 2. Run closed_ref_from_de_novo_forPICRUSt.sh with the fasta file with representative ASV seqs from step 1.
+#NB: You cannot run this script as is - you will need to adapt to specify your own files and filepaths and set your HPC account group membership
 3. You will need the .RDS file from 1. for the R script WISH_de_novo_to_closed_ref_OTUs.R together with the .txt mapping file created in 2. to create a ASV table with GG IDs and it's corresponding .biom file for use wit PICRUSt
-4. Run PICRUSt.sh on .biom generated in 3: NB you cannot run PICRUSt.sh as is - you need to modify it to sspecify your own files and filepaths.
+4. Run PICRUSt.sh on .biom generated in 3 as follows:
 4a. Log in to HPC
 4b. Start an interactive job with something like
 ```
@@ -37,7 +38,8 @@ conda install -c anaconda h5py
 ```
 If you get an error stating disk quota exceeded please contact the system administrator to increase your chunk files.
 
-4d. From the interactive job and activated picrust1 environment do:
+4d. From the interactive job and activated picrust1 environment submit the PICRUSt.sh script BUT:
+#NB: You cannot run this script as is - you will need to adapt to specify your own files and filepaths and set your HPC account group membership
 ```
 sbatch PICRUSt.sh
 ```
