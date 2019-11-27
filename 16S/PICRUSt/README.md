@@ -39,6 +39,10 @@ conda install -c anaconda h5py
 ```
 If you get an error stating disk quota exceeded please contact the system administrator to increase your chunk files.
 
+Next download the PICRUSt precalculated files using the command:
+
+```download_picrust_files.py```
+
 4d. From the interactive job and activated picrust1 environment submit the PICRUSt.sh script BUT:
 #NB: You cannot run this script as is - you will need to adapt to specify your own files and filepaths and set your HPC account group membership
 ```
